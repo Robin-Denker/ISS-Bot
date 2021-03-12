@@ -15,7 +15,7 @@ access_token_secret = "token_secret"
 #passes authentication
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
-#creats API-Object
+#creates Twitter API-Object
 api = tweepy.API(auth)
 
 def make_dataframe():
