@@ -19,7 +19,6 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 def make_dataframe():
-    global dataframe
     #gets iss api information
     url = "http://api.open-notify.org/iss-now.json"
     dataframe = pd.read_json(url)
@@ -27,7 +26,8 @@ def make_dataframe():
     dataframe['latitude'] = dataframe.loc['latitude', 'iss_position']
     dataframe['longitude'] = dataframe.loc['longitude', 'iss_position']
     dataframe.reset_index(inplace=True)
-    dataframe = dataframe.drop(['index', 'message'], axis=1)  
+    dataframe = dataframe.drop(['index', 'message'], axis=1)
+    return dataframe
     
 #draws map with iss position
 def draw_map(dataframe):
