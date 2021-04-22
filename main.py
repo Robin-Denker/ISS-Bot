@@ -55,9 +55,9 @@ def tweet_photos(api, dataframe):
 def main():
     #loops functions every 60min
     while True:
-        make_dataframe()
-        draw_map(dataframe)
-        tweet_photos(api, dataframe)
+       df = make_dataframe()
+        draw_map(df)
+        tweet_photos(api, df)
         sleep(3600)
 
 if __name__ == "__main__":
